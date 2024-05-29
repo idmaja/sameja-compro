@@ -12,6 +12,7 @@ Welcome to the GitHub repository for SAMEJA EATERY, a renowned restaurant locate
   - [Managing Promo](#managing-promo)
   - [Managing Venue](#managing-venue)
 - [Setup and Installation](#setup-and-installation)
+  - [Database Setup](#database-setup)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -71,15 +72,29 @@ To set up the project locally, follow these steps:
 
 2. **Install dependencies:**
    ```sh
+   composer install
    npm install
    ```
 
 3. **Set up environment variables:**
-   Create a `.env` file in the root directory and add the necessary environment variables.
+   Create a `.env` file in the root directory and add the necessary environment variables. Use the `.env.example` file as a reference.
 
-4. **Run the application:**
+4. **Database Setup:**
+   Our original database was lost and corrupted. You will need to create a new database using the Laravel migrations provided.
+   - Create a new MySQL database.
+   - Update your `.env` file with the database credentials.
+   - Run the migrations to set up the database schema:
+     ```sh
+     php artisan migrate
+     ```
+   - (Optional) Seed the database with initial data:
+     ```sh
+     php artisan db:seed
+     ```
+
+5. **Run the application:**
    ```sh
-   npm start
+   php artisan serve
    ```
 
 ## Contributing
@@ -95,4 +110,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ---
 
-Thank you for visiting SAMEJA EATERY's GitHub repository! We hope you enjoy exploring our applications.
+Thank you for visiting SAMEJA EATERY's GitHub repository! We hope you enjoy exploring our applications. For any questions or feedback, please contact us at [E-MAIL](mailto:dhimasm999@gmail.com).
