@@ -66,7 +66,7 @@ To set up the project locally, follow these steps:
 
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/username/sameja-eatery.git
+   git clone https://github.com/username/sameja-compro.git
    cd sameja-eatery
    ```
 
