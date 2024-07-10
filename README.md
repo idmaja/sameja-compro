@@ -106,7 +106,7 @@ We welcome contributions from the community! To contribute, please follow these 
 4. Submit a pull request.
 
 ## License
-Sameja Compro © 2023 is licensed under CC BY-NC-ND 4.0. See the [LICENSE](LICENSE) file for more details. 
+Sameja Compro © 2023 is licensed under CC BY-NC-ND 4.0. See the [LICENSE](LICENSE) file for more details. To view a copy of this license, visit [LICENSE WEBSITE](https://creativecommons.org/licenses/by-nc-nd/4.0)
 
 ---
 
