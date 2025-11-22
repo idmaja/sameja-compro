@@ -1,113 +1,122 @@
-# SAMEJA EATERY - Company Profile and Admin Dashboard
+# SAMEJA Company Profile
 
-Welcome to the GitHub repository for SAMEJA EATERY, a renowned restaurant located in Salatiga. This repository contains the source code and documentation for our two main web applications: the Company Profile website and the Admin Dashboard.
+Sameja Compro is a web-based Company Profile and Management System built with the **Laravel 10** framework. This application allows administrators to manage content such as menus, promotions, and venue galleries for a restaurant or business entity, while providing a frontend view for customers.
 
-## Table of Contents
-- [Introduction](#introduction)
-- [Company Profile Website](#company-profile-website)
-- [Admin Dashboard](#admin-dashboard)
-- [User Manual](#user-manual)
-  - [Admin Login](#admin-login)
-  - [Managing Menu](#managing-menu)
-  - [Managing Promo](#managing-promo)
-  - [Managing Venue](#managing-venue)
-- [Setup and Installation](#setup-and-installation)
-  - [Database Setup](#database-setup)
-- [Contributing](#contributing)
-- [License](#license)
+## 📋 Features
 
-## Introduction
-SAMEJA EATERY is a cozy and welcoming restaurant in Salatiga, offering a variety of delicious dishes and a comfortable dining experience. Our web applications aim to provide information about our menu, promotions, and venue, as well as an administrative interface to manage this information efficiently.
+### Admin Panel
+- **Authentication**: Secure login and logout system for administrators.
+- **Dashboard**: Overview of the system.
+- **Menu Management**: Create, read, update, and delete (CRUD) food and beverage items, including prices and images.
+- **Promo Management**: Manage active promotions, descriptions, and banners.
+- **Venue Management**: Manage venue photos and information.
+- **Payment History**: Tracking payment history (based on database schema).
+- **Search Functionality**: Search features implemented for Dashboard, Menus, Promos, and Venues.
 
-## Company Profile Website
-The Company Profile website is the public-facing site that allows visitors to explore our menu, check out our latest promotions, and learn more about our venue. This website is accessible to all users without requiring a login.
+### Public Frontend
+- **Landing Page**: Displays the company profile, menus, promos, and venues to visitors.
 
-### Features
-- **Menu:** Display a list of available dishes along with descriptions and prices.
-- **Promo:** Showcase current promotions and special offers.
-- **Venue:** Provide details about the restaurant’s location, ambiance, and facilities.
+## 🛠 Tech Stack
 
-## Admin Dashboard
-The Admin Dashboard is a restricted area accessible only to authorized personnel. It allows the management team to update and maintain the information displayed on the Company Profile website.
+- **Framework**: Laravel 10.x
+- **Language**: PHP ^8.1
+- **Database**: MySQL
+- **Frontend**: Blade Templates, Bootstrap (integrated via Admin Template based on public assets).
+- **Dependencies**:
+  - `guzzlehttp/guzzle`
+  - `laravel/sanctum`
 
-### Features
-- **Login Authentication:** Secure login system for admin users.
-- **Menu Management:** Add, edit, and delete menu items.
-- **Promo Management:** Create, update, and remove promotional offers.
-- **Venue Management:** Update information about the restaurant’s venue and facilities.
+## ⚙️ Prerequisites
 
-## User Manual
+Before you begin, ensure you have met the following requirements:
+- **PHP** >= 8.1
+- **Composer**
+- **MySQL** (or MariaDB)
+- **Web Server** (Apache/Nginx)
 
-### Admin Login
-To access the Admin Dashboard, follow these steps:
-1. Navigate to the Admin Dashboard login page.
-2. Enter your admin credentials (username and password).
-3. Click on the "Login" button.
+## 🚀 Installation & Setup
 
-### Managing Menu
-1. After logging in, go to the "Menu" section.
-2. To add a new dish, click on the "Add Menu Item" button, fill in the required details, and save.
-3. To edit an existing dish, click on the "Edit" button next to the dish, update the information, and save.
-4. To delete a dish, click on the "Delete" button next to the dish and confirm the deletion.
+Follow these steps to get the project running on your local machine.
 
-### Managing Promo
-1. Navigate to the "Promo" section.
-2. To add a new promotion, click on the "Add Promo" button, fill in the required details, and save.
-3. To edit an existing promotion, click on the "Edit" button next to the promotion, update the information, and save.
-4. To delete a promotion, click on the "Delete" button next to the promotion and confirm the deletion.
-
-### Managing Venue
-1. Navigate to the "Venue" section.
-2. Update the information about the restaurant’s location, ambiance, and facilities.
-3. Click on the "Save" button to apply the changes.
-
-## Setup and Installation
-To set up the project locally, follow these steps:
-
-1. **Clone the repository:**
-   ```sh
-   git clone https://github.com/username/sameja-compro.git
-   cd sameja-eatery
+1. **Clone the Repository**
+   ```bash
+   git clone [https://github.com/yourusername/sameja-compro.git](https://github.com/yourusername/sameja-compro.git)
+   cd sameja-compro
    ```
 
-2. **Install dependencies:**
-   ```sh
-   composer install
-   npm install
-   ```
+2.  **Install Dependencies**
 
-3. **Set up environment variables:**
-   Create a `.env` file in the root directory and add the necessary environment variables. Use the `.env.example` file as a reference.
+    ```bash
+    composer install
+    ```
 
-4. **Database Setup:**
-   Our original database was lost and corrupted. You will need to create a new database using the Laravel migrations provided.
-   - Create a new MySQL database.
-   - Update your `.env` file with the database credentials.
-   - Run the migrations to set up the database schema:
-     ```sh
-     php artisan migrate
-     ```
-   - (Optional) Seed the database with initial data:
-     ```sh
-     php artisan db:seed
-     ```
+3.  **Environment Configuration**
+    Copy the example environment file and configure your database credentials.
 
-5. **Run the application:**
-   ```sh
-   php artisan serve
-   ```
+    ```bash
+    cp .env.example .env
+    ```
 
-## Contributing
-We welcome contributions from the community! To contribute, please follow these steps:
+    Open the `.env` file and update the database settings:
 
-1. Fork the repository.
-2. Create a new branch.
-3. Make your changes.
-4. Submit a pull request.
+    ```env
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=your_database_name
+    DB_USERNAME=your_database_username
+    DB_PASSWORD=your_database_password
+    ```
 
-## License
-Sameja Compro © 2023 is licensed under CC BY-NC-ND 4.0. See the [LICENSE](LICENSE) file for more details. To view a copy of this license, visit [LICENSE WEBSITE](https://creativecommons.org/licenses/by-nc-nd/4.0)
+4.  **Generate App Key**
 
----
+    ```bash
+    php artisan key:generate
+    ```
 
-Thank you for visiting SAMEJA EATERY's GitHub repository! We hope you enjoy exploring our applications. For any questions or feedback, please contact us at [E-MAIL](mailto:dhimasm999@gmail.com).
+5.  **Run Migrations and Seeders**
+    Create the necessary database tables and insert default users (if available).
+
+    ```bash
+    php artisan migrate --seed
+    ```
+
+    *(Note: Ensure `Database\Seeders\UserSeeder` is enabled in `DatabaseSeeder.php` or call it directly)*.
+
+6.  **Link Storage**
+    Since the application handles image uploads for Menus, Promos, and Venues, you must link the storage directory.
+
+    ```bash
+    php artisan storage:link
+    ```
+
+7.  **Run the Application**
+
+    ```bash
+    php artisan serve
+    ```
+
+    The application will be available at `http://127.0.0.1:8000`.
+
+## 📂 Database Schema
+
+Key tables managed by the application:
+
+  - `users`: Admin credentials.
+  - `menus`: Contains `name`, `price`, and `image`.
+  - `promos`: Contains `name`, `description`, and `image`.
+  - `venues`: Contains `name` and `image`.
+  - `historypayments`: Contains transaction records (`name`, `note`, `price`, `check`).
+
+## 🛣️ Key Routes
+
+  - **Login**: `/` or `/login`
+  - **Public Index**: `/index`
+  - **Dashboard**: `/dashboard`
+  - **Menu Management**: `/land-menu`
+  - **Promo Management**: `/land-promo`
+  - **Venue Management**: `/land-venue`
+
+## 📄 License
+
+This project is licensed under the Attribution-NonCommercial-NoDerivatives 4.0 International. See the LICENSE file for details.
